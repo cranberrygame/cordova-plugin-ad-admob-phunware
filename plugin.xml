@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.cranberrygame.cordova.plugin.ad.admob.phunware"
+    version="1.0.0">
+	
+    <name>Cordova Admob-Phunware (TapIt) Mediation Plugin</name>
+    <description>Cordova Admob-Phunware (TapIt) Mediation Plugin</description>
+    <author>Sang Ki Kwon (Cranberrygame)</author>		
+    <license>MIT</license>
+    <keywords>cordova,plugin,ad,admob,monetisation,phunware,mediation</keywords>
+    <repo>https://github.com/cranberrygame/cordova-plugin-ad-admob</repo>
+    <issue>https://github.com/cranberrygame/cordova-plugin-ad-admob/issues</issue> 	
+	<engines>
+	    <engine name="cordova" version=">=3.0.0" />
+	</engines>
+	
+    <platform name="android">
+
+        <!-- dependency -->
+		<source-file src="src/android/TapItSDK.jar" target-dir="libs" />			
+    </platform>
+		
+    <platform name="ios">
+
+		<!-- dependency -->
+<!--
+ "GADMAdNetworkAdapterProtocol.h" not found in recent admit sdk issue:
+ https://groups.google.com/forum/#!topic/google-admob-ads-sdk/RIC1ptidG5s
+ https://github.com/tapit/TapIt-iPhone-SDK/blob/master/Lib/GoogleAdMobAdsSDK/GADMAdNetworkAdapterProtocol.h
+
+		<header-file src="src/ios/TapItMediationAdMob.h" />
+		<source-file src="src/ios/TapItMediationAdMob.m" />	
+        <framework src="src/ios/TapIt.framework" custom="true" />
+		<resource-file src="src/ios/TapIt.bundle" />
+-->
+    </platform>
+
+	<!-- dependency -->
+	<dependency id="com.cranberrygame.cordova.plugin.ad.admob" />
+</plugin>
