@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.cranberrygame.cordova.plugin.ad.admob.phunware"
-    version="1.0.0">
+    version="1.0.1">
 	
     <name>Cordova Admob-Phunware (TapIt) Mediation Plugin</name>
     <description>Cordova Admob-Phunware (TapIt) Mediation Plugin</description>
@@ -18,6 +18,17 @@
     <platform name="android">
 
         <!-- dependency -->
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="com.tapit.adview.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation" />
+		</config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+			<!-- Enable ad geotargeting -->
+			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>		
 		<source-file src="src/android/TapItSDK.jar" target-dir="libs" />			
     </platform>
 		
